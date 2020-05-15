@@ -3,24 +3,28 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --aot --prod"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.0.0",
     "@angular/cdk": "~8.2.3",
+    "@angular/cli": "~8.0.1",
     "@angular/common": "~8.0.0",
     "@angular/compiler": "~8.0.0",
+    "@angular/compiler-cli": "~8.0.0",
     "@angular/core": "~8.0.0",
     "@angular/forms": "~8.0.0",
     "@angular/material": "^8.2.3",
     "@angular/platform-browser": "~8.0.0",
     "@angular/platform-browser-dynamic": "~8.0.0",
     "@angular/router": "~8.0.0",
+    "express": "^4.17.1",
     "hammerjs": "^2.0.8",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
@@ -28,8 +32,6 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.800.0",
-    "@angular/cli": "~8.0.1",
-    "@angular/compiler-cli": "~8.0.0",
     "@angular/language-service": "~8.0.0",
     "@types/node": "~8.9.4",
     "@types/jasmine": "~3.3.8",
@@ -46,5 +48,9 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
+  },
+  "engines": {
+    "node": "10.16.0",
+    "npm": "6.9.0"
   }
 }
