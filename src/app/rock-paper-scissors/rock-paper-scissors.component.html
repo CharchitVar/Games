@@ -1,0 +1,8 @@
+<button style="color: red; background-color: yellow" mat-raised-button color="red" (click)="onNewGameClicked()">New Game</button>
+<app-score-card [compChoice]="compChoice" [playerScore]="playerScore"
+ [computerScore]="computerScore" [userChoice]="userChoice" [status]="status"></app-score-card>
+<div class="images">
+  <img src="../../assets/rock.png" (click)="userSelected('rock')">
+  <img src="../../assets/paper.png" (click)="userSelected('paper')">
+  <img src="../../assets/scissor.png" (click)="userSelected('scissors')">
+</div>
