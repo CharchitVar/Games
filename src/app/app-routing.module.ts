@@ -10,6 +10,7 @@ const routes: Routes = [
     pathMatch:'full',
    redirectTo:'home'
   },
+
   {
     path:'home',
     pathMatch:'full',
@@ -25,7 +26,12 @@ const routes: Routes = [
     path:'rps',
     pathMatch:'full',
     component:RockPaperScissorsComponent
-  }
+  },
+  {
+    path:'**',
+    pathMatch:'full',
+   redirectTo:'home'
+  },
 
 ];
 

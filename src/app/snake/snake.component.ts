@@ -16,7 +16,7 @@ export class SnakeComponent implements OnInit {
   imageName;
   box: number = 20;
   applePosition: any[] = [];
-  score: number = 1;
+  lengthOfSnake: number = 1;
   scoreTodisplay: number = 0;
   direction: string ='right';
   currentPositionX: number;
@@ -91,14 +91,14 @@ export class SnakeComponent implements OnInit {
           this.tail = [];
           this.animate();
           this.scoreTodisplay = 0;
-          this.score = 1;
+          this.lengthOfSnake = 1;
           return;
       }
       else {
           if (x === this.foodPositionX && y === this.foodPositionY) {
               this.foodPositionX = (Math.floor(Math.random() * 30));
               this.foodPositionY = (Math.floor(Math.random() * 30));
-              this.score++;
+              this.lengthOfSnake++;
               this.scoreTodisplay++;
           }
 
@@ -106,7 +106,7 @@ export class SnakeComponent implements OnInit {
           this.ctx.fillRect(z * x, z * y, z, z);
           for (let i = 0; i < this.tail.length - 1; i++) {
 
-              if (this.score > 0) {
+              if (this.lengthOfSnake > 0) {
                   this.ctx.strokeStyle = 'black';
                   if (this.tail[i]) {
                       this.ctx.strokeRect(z * this.tail[i].x, z * this.tail[i].y, z, z);
@@ -125,7 +125,7 @@ export class SnakeComponent implements OnInit {
         for (let i = 0; i < this.tail.length; i++) {
             this.tail[i] = this.tail[i + 1];
         }
-        this.tail[this.score - 1] = { x: x, y: y };
+        this.tail[this.lengthOfSnake - 1] = { x: x, y: y };
         this.draw(x, y, 20);
           x++;
           if (x >= max) {
@@ -144,7 +144,7 @@ export class SnakeComponent implements OnInit {
         for (let i = 0; i < this.tail.length; i++) {
             this.tail[i] = this.tail[i + 1];
         }
-        this.tail[this.score - 1] = { x: x, y: y };
+        this.tail[this.lengthOfSnake - 1] = { x: x, y: y };
         this.draw(x, y, 20);
           y++;
 
@@ -169,7 +169,7 @@ export class SnakeComponent implements OnInit {
         for (let i = 0; i < this.tail.length; i++) {
             this.tail[i] = this.tail[i + 1];
         }
-        this.tail[this.score - 1] = { x: x, y: y };
+        this.tail[this.lengthOfSnake - 1] = { x: x, y: y };
         this.draw(x, y, 20);
           y--;
           if (y <= min) {
@@ -192,7 +192,7 @@ export class SnakeComponent implements OnInit {
         for (let i = 0; i < this.tail.length; i++) {
             this.tail[i] = this.tail[i + 1];
         }
-        this.tail[this.score - 1] = { x: x, y: y };
+        this.tail[this.lengthOfSnake - 1] = { x: x, y: y };
         this.draw(x, y, 20);
           x--;
           if (x <= min) {

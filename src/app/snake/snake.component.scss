@@ -1,9 +1,8 @@
-.canvas {
+.canvas{
+	color: rgb(255, 0, 0);
+	background-color: rgb(183, 235, 135);
+	margin-left: 500px;
+	margin-top: 50px;
 	position: absolute;
-	width: 600px;
-	height: 600px;
-	left: 50%;
-	top: 50%;
-	margin-left: -300px; /* This is half the width */
-	margin-top: -200px; /* This is half the height */
+	border: 2px solid black;
 }
