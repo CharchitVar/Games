@@ -24,6 +24,7 @@ export class SnakeComponent implements OnInit {
   foodPositionX: number;
   foodPositionY: number;
   interval;
+  audio;
   tail: any[] = [];
 
   constructor() {
@@ -96,6 +97,9 @@ export class SnakeComponent implements OnInit {
       }
       else {
           if (x === this.foodPositionX && y === this.foodPositionY) {
+              this.audio = new Audio();
+              this.audio.src = "../../assets/snakehit.mp3";
+              this.audio.play();
               this.foodPositionX = (Math.floor(Math.random() * 30));
               this.foodPositionY = (Math.floor(Math.random() * 30));
               this.lengthOfSnake++;
