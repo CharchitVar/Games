@@ -87,7 +87,7 @@ export class SnakeComponent implements OnInit {
       this.currentPositionX = x;
       this.currentPositionY = y;
       if (this.iSCollisionOccur()) {
-          alert('Game over');
+          alert('Game over - Your Score  ' + this.scoreTodisplay);
           clearInterval(this.interval);
           this.tail = [];
           this.animate();
